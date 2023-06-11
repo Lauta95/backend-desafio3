@@ -93,5 +93,3 @@ async function crearUsuarios() {
 }
 
 crearUsuarios();
-
-
