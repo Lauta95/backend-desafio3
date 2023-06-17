@@ -1,7 +1,6 @@
-const fs = require("fs");
+import fs from "fs";
 
 class ProductManager {
-    static #path = "./mock/products.json";
     constructor(path) {
         this.path = path;
         this.format = 'utf-8';
@@ -78,20 +77,4 @@ class ProductManager {
     }
 }
 
-async function crearUsuarios() {
-    const nuevoProducto = new ProductManager('archivo.json');
-    // Checkear prime la devolución de un array vacío:
-    console.log(await nuevoProducto.getProducts());
-    // Agregar producto nuevo:
-    await nuevoProducto.addProduct('producto prueba', 'este es un producto de prueba', 200, 'sin imagen', 'abc123', 25)
-    // Buscar un producto por su id:
-    // await nuevoProducto.getProductById(8);
-    // Para modificar un producto existente
-    // await nuevoProducto.updateProduct(10, 'title', 'probando el metodo updateProduct');
-    // Para borrar un id Existente:
-    // await nuevoProducto.deleteProduct(2);    
-}
-
-crearUsuarios();
-
-module.exports = ProductManager;
+export default ProductManager;

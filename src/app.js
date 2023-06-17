@@ -1,12 +1,12 @@
-const express = require("express");
-const ProductManager = require("./productManager");
+import express from 'express';
 const app = express()
-const productManager = new ProductManager();
-const port = 8080;
+import ProductManager from './funciones.js';
 
-app.get('/saludo', (req, res) => {
+app.get('/saludo', (req,res)=>{
     console.log(req.query);
-    res.send('hola...')
+    const edad = req.query.edad;
+
+    res.send(`tu edad es ${edad} años`);
 })
 
-app.listen(8080, () => console.log('escuchando 8080'))
+app.listen(8080)
