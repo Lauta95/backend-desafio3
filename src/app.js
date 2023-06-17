@@ -1,5 +1,7 @@
 import express from 'express'
 
+import ProductManager from "./funciones.js"
+
 const app = express()
 
 app.get('/saludo', (req, res) => {

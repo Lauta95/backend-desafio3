@@ -1,4 +1,3 @@
-const fs = require('fs');
 
 class ProductManager {
 
@@ -81,9 +80,9 @@ class ProductManager {
 async function crearUsuarios() {
     const nuevoProducto = new ProductManager('archivo.json');
     // Checkear prime la devolución de un array vacío:
-    console.log(await nuevoProducto.getProducts());
+    // console.log(await nuevoProducto.getProducts());
     // Agregar producto nuevo:
-    // await nuevoProducto.addProduct('producto prueba', 'este es un producto de prueba', 200, 'sin imagen', 'abc123', 25)
+    await nuevoProducto.addProduct('producto prueba', 'este es un producto de prueba', 200, 'sin imagen', 'abc123', 25)
     // Buscar un producto por su id:
     // await nuevoProducto.getProductById(8);
     // Para modificar un producto existente
@@ -93,3 +92,5 @@ async function crearUsuarios() {
 }
 
 crearUsuarios();
+
+export default ProductManager;
