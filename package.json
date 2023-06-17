@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "funciones.js",
-  "type":"module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.jsn"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
