@@ -6,7 +6,6 @@ const productManager = new ProductManager();
 app.listen(8080);
 
 app.get('/products', async (req, res) => {
-    // desestructuración de objetos javascript para extraer el valor del parametro limit del objeto req.query y asignarlo a la variable limit.
     const limit = req.query.limit;
     try {
         const products = await productManager.getProducts();
