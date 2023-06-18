@@ -1,7 +1,8 @@
 import fs from "fs";
 
 class ProductManager {
-    constructor(path) {
+    constructor() {
+        const path = "./archivo.json"
         this.path = path;
         this.format = 'utf-8';
     }
