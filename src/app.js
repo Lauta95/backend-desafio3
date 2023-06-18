@@ -7,7 +7,7 @@ app.listen(8080);
 
 app.get('/products', async (req, res) => {
     // desestructuración de objetos javascript para extraer el valor del parametro limit del objeto req.query y asignarlo a la variable limit.
-    const { limit } = req.query;
+    const limit = req.query.limit;
     try {
         const products = await productManager.getProducts();
         if (!limit) {
@@ -16,9 +16,20 @@ app.get('/products', async (req, res) => {
             const limiteDeProductos = products.slice(0, limit);
             res.json(limiteDeProductos);
         }
-    } 
-    catch(err) {
+    }
+    catch (err) {
         res.json(err);
-        // console.log(err);
+    }
+});
+app.get('/products/:pid', async (req, res) => {
+    let pid = req.params.pid;
+    try {
+        console.log(req.params);
+        const product = await productManager.getProductById(Number(pid));
+        res.json(product);
+    }
+    catch(err){
+        res.json(err);
+        console.log(err);
     }
 });
