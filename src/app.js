@@ -25,6 +25,7 @@ app.get('/products/:pid', async (req, res) => {
     try {
         console.log(req.params);
         const product = await productManager.getProductById(Number(pid));
+        if(!product) return res.status(404).send("404: Product not found")
         res.json(product);
     }
     catch(err){
