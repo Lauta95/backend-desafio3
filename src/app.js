@@ -31,5 +31,6 @@ app.get('/products/:pid', async (req, res) => {
     catch(err){
         res.json(err);
         console.log(err);
+        return res.status(err.status || 500).json({error: err.message});
     }
 });
